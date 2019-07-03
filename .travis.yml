@@ -9,15 +9,15 @@ script:
   - docker run -e CI=true react-test npm run test -- --coverage
 
 after_success:
-  - docker build -t akaciaissa/multi-worker ./worker
-  - docker build -t akaciaissa/multi-nginx ./nginx
-  - docker build -t akaciaissa/multi-server ./server 
-  - docker build -t akaciaissa/multi-client ./client
+  - docker build -t akaciais/multi-worker ./worker
+  - docker build -t akaciais/multi-nginx ./nginx
+  - docker build -t akaciais/multi-server ./server 
+  - docker build -t akaciais/multi-client ./client
   # Log into the docker hub
   - echo "$DOCKER_PASSWORD" | docker login -u docker login "$DOCKER_ID" --password-stdin
 
   # Push images to docker hub
-  - docker push akaciaissa/multi-worker
-  - docker push akaciaissa/multi-nginx
-  - docker push akaciaissa/multi-server
-  - docker push akaciaissa/multi-client
+  - docker push akaciais/multi-worker
+  - docker push akaciais/multi-nginx
+  - docker push akaciais/multi-server
+  - docker push akaciais/multi-client
