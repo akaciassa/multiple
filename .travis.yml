@@ -17,7 +17,7 @@ after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u docker login "$DOCKER_ID" --password-stdin
 
   # Push images to docker hub
-  - docker push kaciaissa/multi-worker
-  - docker push kaciaissa/multi-nginx
-  - docker push kaciaissa/multi-server
-  - docker push kaciaissa/multi-client
+  - docker push akaciaissa/multi-worker
+  - docker push akaciaissa/multi-nginx
+  - docker push akaciaissa/multi-server
+  - docker push akaciaissa/multi-client
