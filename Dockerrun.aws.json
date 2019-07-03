@@ -1,0 +1,23 @@
+{
+    "AWSEBDockerrunVersion" : 2,
+    "containerDefinitions" : [
+        {
+            "name" : "client",
+            "image" : "akaciais/multi-client",
+            "hostname": "client",
+            "essential" : false
+        },
+        {
+            "name" : "server",
+            "image" : "akaciais/multi-server",
+            "hostname": "api",
+            "essential" : false
+        },
+        {
+            "name" : "client",
+            "image" : "akaciais/multi-worker",
+            "hostname": "worker",
+            "essential" : false
+        }
+    ]
+}
