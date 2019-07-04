@@ -13,10 +13,9 @@ after_success:
   - docker build -t akaciais/multi-nginx ./nginx
   - docker build -t akaciais/multi-server ./server 
   - docker build -t akaciais/multi-client ./client
-  # Log into the docker hub
+
   - echo "$DOCKER_PASSWORD" | docker login -u docker login "$DOCKER_ID" --password-stdin
 
-  # Push images to docker hub
   - docker push akaciais/multi-worker
   - docker push akaciais/multi-nginx
   - docker push akaciais/multi-server
@@ -33,4 +32,4 @@ deploy:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key:
-    secure: "$AWS_SECRET
+    secure: $AWS_SECRET
